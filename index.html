@@ -1,0 +1,193 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta
+      name="description"
+      content="A simple sudoku app with some minimal features"
+    />
+    <meta name="theme-color" content="#000000" />
+    <meta property="og:url" content="https://crisfandino.ml" />
+    <meta property="og:type" content="website" />
+    <meta property="og:title" content="SUDOKU APP" />
+    <meta
+      property="og:description"
+      content="A simple sudoku app with some minimal features"
+    />
+    <meta property="og:image" content="/assets/sample.png" />
+
+    <!-- Twitter Meta Tags -->
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta property="twitter:domain" content="crisfandino.ml" />
+    <meta property="twitter:url" content="https://crisfandino.ml" />
+    <meta name="twitter:title" content="SUDOKU APP" />
+    <meta
+      name="twitter:description"
+      content="A simple sudoku app with some minimal features"
+    />
+    <meta name="twitter:image" content="/assets/sample.png" />
+
+    <link rel="apple-touch-icon" href="/assets/sudokuLogo-192.png" />
+    <title>SUDOKU APP</title>
+
+    <link rel="manifest" href="/manifest.json" />
+    <link rel="stylesheet" href="./css/main.css" />
+    <link rel="shortcut icon" href="assets/favicon.png" type="image/png" />
+    <script defer>
+      if ('serviceWorker' in navigator) {
+        window.navigator.serviceWorker.register('sw.js')
+      }
+    </script>
+    <style>
+      noscript {
+        background: red;
+        color: white;
+        font-size: 1.5rem;
+        padding: 0.6rem 1rem;
+      }
+    </style>
+  </head>
+  <body>
+    <noscript>Please Enable Javascript to run the site</noscript>
+    <div id="gameContainer">
+      <h1 class="logo">Sudoku</h1>
+      <div id="sudokuTable">
+        <div class="sudoku-row">
+          <div></div>
+          <div></div>
+          <div></div>
+          <div></div>
+          <div></div>
+          <div></div>
+          <div></div>
+          <div></div>
+          <div></div>
+        </div>
+        <div class="sudoku-row">
+          <div></div>
+          <div></div>
+          <div></div>
+          <div></div>
+          <div></div>
+          <div></div>
+          <div></div>
+          <div></div>
+          <div></div>
+        </div>
+        <div class="sudoku-row">
+          <div></div>
+          <div></div>
+          <div></div>
+          <div></div>
+          <div></div>
+          <div></div>
+          <div></div>
+          <div></div>
+          <div></div>
+        </div>
+        <div class="sudoku-row">
+          <div></div>
+          <div></div>
+          <div></div>
+          <div></div>
+          <div></div>
+          <div></div>
+          <div></div>
+          <div></div>
+          <div></div>
+        </div>
+        <div class="sudoku-row">
+          <div></div>
+          <div></div>
+          <div></div>
+          <div></div>
+          <div></div>
+          <div></div>
+          <div></div>
+          <div></div>
+          <div></div>
+        </div>
+        <div class="sudoku-row">
+          <div></div>
+          <div></div>
+          <div></div>
+          <div></div>
+          <div></div>
+          <div></div>
+          <div></div>
+          <div></div>
+          <div></div>
+        </div>
+        <div class="sudoku-row">
+          <div></div>
+          <div></div>
+          <div></div>
+          <div></div>
+          <div></div>
+          <div></div>
+          <div></div>
+          <div></div>
+          <div></div>
+        </div>
+        <div class="sudoku-row">
+          <div></div>
+          <div></div>
+          <div></div>
+          <div></div>
+          <div></div>
+          <div></div>
+          <div></div>
+          <div></div>
+          <div></div>
+        </div>
+        <div class="sudoku-row">
+          <div></div>
+          <div></div>
+          <div></div>
+          <div></div>
+          <div></div>
+          <div></div>
+          <div></div>
+          <div></div>
+          <div></div>
+        </div>
+      </div>
+      <div class="button-panel numbers">
+        <button data-variant="1">1</button>
+        <button data-variant="2">2</button>
+        <button data-variant="3">3</button>
+        <button data-variant="4">4</button>
+        <button data-variant="5">5</button>
+        <button data-variant="6">6</button>
+        <button data-variant="7">7</button>
+        <button data-variant="8">8</button>
+        <button data-variant="9">9</button>
+        <button data-variant=".">C</button>
+      </div>
+      <blockquote style="text-align: center;">
+        <b>Tip:</b>
+        You can use keyboard
+        <b>number</b>
+        keys to fill the box and
+        <b>spacebar</b>
+        to clear it
+      </blockquote>
+      <div class="button-panel tools">
+        <button data-variant="undo">Undo</button>
+        <button data-variant="reset">Reset</button>
+        <button data-variant="solve">Solve</button>
+        <button data-variant="toggleAutomaticErrorDetection">
+          Detect Errors
+        </button>
+      </div>
+      <div class="button-panel difficulty">
+        <button data-variant="easy">Easy</button>
+        <button data-variant="medium">Medium</button>
+        <button data-variant="hard">Hard</button>
+      </div>
+    </div>
+
+    <script type="module" src="./scripts/index.js"></script>
+  </body>
+</html>

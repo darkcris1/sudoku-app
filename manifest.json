@@ -1,0 +1,22 @@
+{
+  "name": "Suduko Game",
+  "short_name": "Suduko",
+  "start_url": "/index.html",
+  "display": "standalone",
+  "orientation": "any",
+  "theme_color": "#000000",
+  "background_color": "#ffffff",
+  "icons": [
+    {
+      "src": "/assets/sudokuLogo-192.png",
+      "sizes": "192x192",
+      "type": "image/png"
+    },
+    {
+      "src": "/assets/touch-icons/sudokuLogo-800.png",
+      "sizes": "800x800",
+      "type": "image/png",
+      "purpose": "maskable any"
+    }
+  ]
+}

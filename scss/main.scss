@@ -1,0 +1,137 @@
+@import 'normalize';
+@import 'function';
+
+:root {
+  --border-color: #000000;
+  --hover-color: rgba(128, 128, 128, 0.315);
+  --initial-value: rgb(0, 0, 0);
+  --set-value: rgb(1, 161, 209);
+  --error-value: red;
+  --grid-cross-border: 3px solid #000000;
+  --btn-active-color: rgba(1, 161, 209, 0.288);
+}
+
+* {
+  box-sizing: border-box;
+}
+body {
+  @include flexCenter;
+}
+#gameContainer {
+  flex-direction: column;
+  width: 95%;
+  max-width: 1300px;
+  margin: 1rem auto;
+  position: relative;
+  @include responsive('medium') {
+    width: 75%;
+  }
+  @include responsive('large') {
+    width: 50%;
+  }
+  .logo {
+    font-size: 2.5rem;
+    text-align: center;
+    text-transform: uppercase;
+  }
+}
+
+#sudokuTable {
+  position: relative;
+  display: grid;
+  align-items: center;
+  grid-template-columns: 1fr;
+  user-select: none;
+
+  .sudoku-row {
+    min-height: 50px;
+    display: grid;
+    justify-content: center;
+    grid-template-columns: repeat(9, 1fr);
+    &:nth-child(3) {
+      border-bottom: var(--grid-cross-border);
+    }
+    &:nth-child(6) {
+      border-bottom: var(--grid-cross-border);
+    }
+    .selected {
+      background: var(--hover-color);
+    }
+    div {
+      border: 1px solid var(--border-color);
+      width: 100%;
+      height: 100%;
+      position: relative;
+      &:nth-child(3) {
+        border-right: var(--grid-cross-border);
+      }
+      &:nth-child(6) {
+        border-right: var(--grid-cross-border);
+      }
+      &:hover {
+        background: var(--hover-color);
+        cursor: pointer;
+      }
+      span {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        font-size: 2rem;
+        color: var(--set-value);
+        &.error-value {
+          color: var(--error-value);
+        }
+        &.initial-value {
+          font-weight: 500;
+          color: var(--initial-value);
+        }
+      }
+    }
+  }
+}
+button {
+  padding: 0.35rem 0.75rem;
+  border-width: 0.5px;
+  &:focus {
+    outline: none;
+  }
+  &:hover {
+    background-color: var(--hover-color);
+  }
+}
+
+.button-panel {
+  margin: 1rem auto;
+  border: 1px solid var(--border-color);
+  width: fit-content;
+  @include flexCenter;
+  .active {
+    background-color: var(--btn-active-color);
+  }
+  button {
+    border: none;
+  }
+}
+
+.numbers {
+  border: 1px solid var(--border-color);
+  width: auto;
+
+  button {
+    border: none;
+    width: 100%;
+    background: rgb(207, 207, 207);
+    color: black;
+    padding: 0.7rem;
+    &.fully-used {
+      opacity: 0.5;
+    }
+  }
+  button:hover:not(.fully-used) {
+    background-color: var(--hover-color);
+  }
+  .selected {
+    background-color: darken(rgba(128, 128, 128, 0.315), 20%);
+  }
+}
