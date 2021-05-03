@@ -13,7 +13,7 @@
       "type": "image/png"
     },
     {
-      "src": "/assets/touch-icons/sudokuLogo-800.png",
+      "src": "/assets/sudokuLogo-800.png",
       "sizes": "800x800",
       "type": "image/png",
       "purpose": "maskable any"
